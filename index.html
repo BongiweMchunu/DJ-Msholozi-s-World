@@ -40,31 +40,15 @@
     }
 
     .hero {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       text-align: center;
       padding: 4rem 1rem;
-      background: url("images/your-gif.gif") no-repeat center center/cover;
-      overflow: hidden;
+      background: url('images/top.gif') center/cover no-repeat;
+      transform: perspective(1000px) rotateX(5deg);
+      transition: transform 0.8s ease-in-out;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.4); /* dark overlay */
-      z-index: 1;
-    }
-
-    .hero h1,
-    .hero p,
-    .hero .btn {
-      position: relative;
-      z-index: 2;
+    .hero:hover {
+      transform: perspective(1000px) rotateX(0deg);
     }
 
     .btn {
@@ -125,30 +109,6 @@
       flex-direction: column;
     }
 
-    .about {
-      padding: 4rem 1rem;
-      background: #1a1a1a;
-      text-align: center;
-    }
-
-    .about-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .about h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      color: crimson;
-      text-transform: uppercase;
-    }
-
-    .about p {
-      line-height: 1.6;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-
     footer {
       text-align: center;
       padding: 1rem;
@@ -174,11 +134,9 @@
   </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <h1>Welcome to DJ Msholozi's World</h1>
-      <p>Book, Listen, Shop & Follow the Beat</p>
-      <a href="booking.html" class="btn">Book Now</a>
-    </div>
+    <h1>Welcome to DJ Msholozi's World</h1>
+    <p>Book, Listen, Shop & Follow the Beat</p>
+    <a href="booking.html" class="btn">Book Now</a>
   </section>
 
   <div class="card">
@@ -220,7 +178,35 @@
       </p>
     </div>
   </section>
+  
+    <style>
+      .about {
+  padding: 4rem 1rem;
+  background: #1a1a1a;
+  text-align: center;
+}
 
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: crimson;
+  text-transform: uppercase;
+}
+
+.about p {
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+    </style>
+  </section>
+  
   <footer>
     <p>&copy; 2025 DJ Msholozi</p>
   </footer>
