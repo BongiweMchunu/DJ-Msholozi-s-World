@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DJ Msholozi</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+    header {
+      background: #222;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      max-width: 150px;
+      height: auto;
+      display: block;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: url('images/cuff.jpg') center/cover no-repeat;
+      transform: perspective(1000px) rotateX(5deg);
+      transition: transform 0.8s ease-in-out;
+    }
+
+    .hero:hover {
+      transform: perspective(1000px) rotateX(0deg);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: crimson;
+      color: white;
+      text-decoration: none;
+      margin-top: 1rem;
+      transform: scale(1);
+      transition: transform 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+    }
+
+    .card {
+      width: 300px;
+      height: 400px;
+      perspective: 1000px;
+      margin: 2rem auto;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border: 2px solid #fff;
+    }
+
+    .card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-back {
+      background: #222;
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #222;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Images/Logo.jpg" alt="DJ Msholozi Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="weekly-music.html">Weekly Music</a></li>
+        <li><a href="past-events.html">Past Events</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to DJ Msholozi's World</h1>
+    <p>Book, Listen, Shop & Follow the Beat</p>
+    <a href="booking.html" class="btn">Book Now</a>
+  </section>
+
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="Images/IMG-20250607-WA0013.jpg" alt="Msholozi DJ">
+      </div>
+      <div class="card-back">
+        <h2>DJ Msholozi</h2>
+        <p>Music, Events, Booking</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="about">
+    <div class="about-content">
+      <h2>About DJ Msholozi</h2>
+      <p>
+        DJ Msholozi is a passionate and energetic performer known for igniting dancefloors across South Africa. 
+        With a signature blend of Afro-house, Amapiano, and modern beats, Msholozi has become a crowd favorite, 
+        bringing unforgettable vibes to every event.
+      </p>
+      <p>
+        He began his career in 2017, and after 8 years in the music scene, he continues to grow and evolve. His journey has 
+        taken him to stages in Bloemfontein (Free State), Potchefstroom and Vryburg (North West), as well as Pella, 
+        Namaqualand, Kimberley, and Upington (Northern Cape). He has also made appearances on national radio, including 200 (SABC Studios).
+      </p>
+      <p>
+        DJ Msholozi is the visionary behind some of the most talked-about events in the country. His most successful 
+        and iconic productions include the annual <strong>Cuff Your Chick Larnie (CYCL)</strong> hosted by him and his dedicated team.
+      </p>
+      <p>
+        He is also the founder of <strong>Leaders of the New School Events & Entertainment</strong> — a brand created 
+        to redefine nightlife and music culture through premium experiences and unmatched talent.
+      </p>
+      <p>
+        Stay tuned for his upcoming EP, co-produced by <strong>Wayne 11</strong> and <strong>DJ Msholozi</strong>. 
+        It’s still under construction but promises to shake up the game once it drops!
+      </p>
+    </div>
+  </section>
+  
+    <style>
+      .about {
+  padding: 4rem 1rem;
+  background: #1a1a1a;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: crimson;
+  text-transform: uppercase;
+}
+
+.about p {
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+    </style>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 DJ Msholozi</p>
+  </footer>
+</body>
+</html>
