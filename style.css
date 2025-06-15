@@ -244,3 +244,19 @@ scroll-behavior: smooth;
   background-color: darkred;
   cursor: not-allowed;
 }
+
+.calendar-note {
+  margin-top: 1.5rem;
+  color: #ccc;
+  font-size: 0.95rem;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.booked-highlight {
+  color: crimson;
+  font-weight: bold;
+}
