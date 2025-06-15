@@ -17,6 +17,7 @@ header {
   max-width: 150px;
   height: auto;
   display: block;
+  padding-right: 80px;
 }
 
 nav ul {
