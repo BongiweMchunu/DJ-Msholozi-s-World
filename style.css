@@ -14,9 +14,11 @@ header {
 }
 
 .logo {
-  width: 50%;
-  height: 30px;
-
+  max-width: 150px;
+  height: auto;
+  display: block;
+  padding: 0;
+  
 }
 
 nav ul {
