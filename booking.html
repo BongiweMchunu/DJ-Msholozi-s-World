@@ -79,11 +79,8 @@
         <div id="availability-calendar"></div>
         <p class="calendar-note">
             If your desired date is <span class="booked-highlight">booked</span>, please still fill out the booking form and indicate in the message that the date is already booked. DJ Msholozi may offer alternative arrangements.
-          </p>
-          <div class="calendar-day booked" data-message="DJ Msholozi is already booked for a wedding on this date.">15 June 2025</div>
-          <div class="calendar-day booked" data-message="Booked for a corporate gig in Cape Town.">21</div>
-          <div class="calendar-day available">22</div>
-
+        </p>
+          <div class="calendar-day booked" data-message="DJ Msholozi is already booked for a wedding on this date.">15</div>
       </section> 
 
    <section class="booking" id="bookingFormSection">
@@ -177,6 +174,31 @@
     }, 600);
   });
 }
+
+// Create the popup element
+const popup = document.createElement("div");
+popup.className = "calendar-popup";
+document.querySelector(".calendar").appendChild(popup);
+
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("calendar-day")) {
+    const rect = e.target.getBoundingClientRect();
+    const message = e.target.dataset.message;
+
+    if (e.target.classList.contains("booked") && message) {
+      // Position the popup
+      popup.innerText = message;
+      popup.style.left = `${e.target.offsetLeft}px`;
+      popup.style.top = `${e.target.offsetTop + e.target.offsetHeight + 5}px`;
+      popup.style.display = "block";
+    } else {
+      popup.style.display = "none";
+    }
+  } else {
+    popup.style.display = "none";
+  }
+});
+
 
   
         calendar.appendChild(div);
