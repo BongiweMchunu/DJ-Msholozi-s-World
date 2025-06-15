@@ -316,3 +316,31 @@ scroll-behavior: smooth;
 .btn-block:hover {
   background: darkred;
 }
+
+.calendar-day.booked {
+  position: relative;
+}
+
+.calendar-day.booked::after {
+  content: attr(data-message);
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: crimson;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  z-index: 10;
+  width: max-content;
+  max-width: 200px;
+}
+
+.calendar-day.booked:hover::after {
+  opacity: 1;
+}
