@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weekly Music – DJ Msholozi</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Sidebar Layout */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 200px;
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  z-index: 1000;
+}
+
+.logo-container {
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+/* Vertical Navigation */
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.sidebar nav ul li a:hover {
+  color: crimson;
+  border-left: 4px solid crimson;
+  padding-left: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Push content to the right of sidebar */
+body {
+  margin-left: 200px;
+}
+
+.music-section {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #1a1a1a;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+
+.music-section h2 {
+  color: crimson;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.track {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #222;
+  border-radius: 8px;
+}
+
+.track iframe, .track audio {
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+.track-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.track-description {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+  </style>
+</head>
+<body>
+    <header class="sidebar">
+        <div class="logo-container">
+          <img src="Images/Logo.jpg" alt="DJ Msholozi Logo" class="logo">
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="store.html">Store</a></li>
+            <li><a href="weekly-music.html">Weekly Music</a></li>
+            <li><a href="past-events.html">Past Events</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+
+  <section class="music-section">
+    <h2>This Week's Vibes</h2>
+
+    <div class="track">
+      <div class="track-title">🔥 Amapiano Heat</div>
+      <div class="track-description">Weekend starter vibes</div>
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="track">
+      <div class="track-title">🎧 Sunday Chill</div>
+      <div class="track-description">Smooth house for Sunday unwind</div>
+      <audio controls>
+        <source src="music/sunday-vibes.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <div class="track">
+      <div class="track-title">🌍 SoundCloud Exclusive</div>
+      <div class="track-description">Latest drop featuring Wayne 11</div>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" 
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/TRACK_ID">
+      </iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2017 DJ Msholozi's World</p>
+  </footer>
+</body>
+</html>
