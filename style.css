@@ -188,10 +188,6 @@ scroll-behavior: smooth;
   text-decoration: none;
 }
 
-.btn-block {
-  padding: 5px;
-  margin: 0;
-}
 
 .calendar {
   max-width: 700px;
