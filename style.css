@@ -189,7 +189,7 @@ scroll-behavior: smooth;
 }
 
 .btn-block{
-  width: auto;
+  width:fit-content;
 }
 
 .calendar {
