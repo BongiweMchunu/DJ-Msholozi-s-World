@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DJ Msholozi Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+    h1 {
+      color: crimson;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .product {
+      background: #222;
+      border-radius: 8px;
+      padding: 1rem;
+      max-width: 250px;
+      text-align: center;
+      box-shadow: 0 0 10px crimson;
+    }
+    .product img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .product h3 {
+      margin: 1rem 0 0.5rem;
+    }
+    .product p {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      display: inline-block;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .btn-whatsapp:hover {
+      background: #1ebe57;
+    }
+  </style>
+</head>
+<body>
+  <h1>DJ Msholozi Store</h1>
+  <div class="product-list">
+    <div class="product">
+      <img src="Images/merch1.jpg" alt="Product 1" />
+      <h3>Exclusive DJ Msholozi T-shirt</h3>
+      <p>High quality cotton, available in all sizes.</p>
+      <a href="https://wa.me/27794245714?text=Hi%20DJ%20Msholozi,%20I%20am%20interested%20in%20buying%20the%20T-shirt." 
+         class="btn-whatsapp" target="_blank" rel="noopener">Order on WhatsApp</a>
+    </div>
+
+    <div class="product">
+      <img src="Images/merch2.jpg" alt="Product 2" />
+      <h3>DJ Msholozi Cap</h3>
+      <p>Stylish black cap with logo embroidery.</p>
+      <a href="https://wa.me/27794245714?text=Hi%20DJ%20Msholozi,%20I%20want%20to%20order%20the%20Cap." 
+         class="btn-whatsapp" target="_blank" rel="noopener">Order on WhatsApp</a>
+    </div>
+
+    <!-- Add more products as needed -->
+  </div>
+</body>
+</html>
