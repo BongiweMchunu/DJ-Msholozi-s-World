@@ -1,3 +1,124 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+header {
+  background: #222;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a:hover {
+color: crimson;
+border-bottom: 2px solid crimson;
+transition: all 0.3s ease;
+}
+
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: url('images/top.gif') center/cover no-repeat;
+  transform: perspective(1000px) rotateX(5deg);
+  transition: transform 0.8s ease-in-out;
+}
+
+.hero:hover {
+  transform: perspective(1000px) rotateX(0deg);
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: crimson;
+  color: white;
+  text-decoration: none;
+  margin-top: 1rem;
+  transform: scale(1);
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  margin: 2rem auto;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 2px solid #fff;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-back {
+  background: #222;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: #ccc;
+}
+html {
+scroll-behavior: smooth;
+}
+
 .about {
   padding: 4rem 1rem;
   background: #1a1a1a;
@@ -19,4 +140,107 @@
   line-height: 1.6;
   font-size: 1rem;
   margin-bottom: 1rem;
+}
+
+.booking {
+  max-width: 600px;
+  margin: 5rem auto;
+  padding: 2rem;
+  background: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+}
+
+.booking h2 {
+  text-align: center;
+  color: crimson;
+  margin-bottom: 2rem;
+}
+
+.booking input,
+.booking textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #222;
+  color: white;
+  font-size: 1rem;
+}
+
+.booking textarea {
+  height: 100px;
+}
+
+.btn-block {
+  width: 100%;
+  display: block;
+}
+
+.calendar {
+  max-width: 700px;
+  margin: 3rem auto;
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.calendar-header button {
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#availability-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.calendar-day {
+  padding: 10px;
+  border-radius: 5px;
+  background: #333;
+}
+
+.calendar-day.booked {
+  background: crimson;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.calendar-day.available {
+  background: green;
+}
+
+#calendar-month {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.calendar-day.available:hover {
+  background-color: limegreen;
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.calendar-day.booked:hover {
+  background-color: darkred;
+  cursor: not-allowed;
 }

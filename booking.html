@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book DJ Msholozi</title>
+  <link rel="stylesheet" href="style.css"> 
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .booking {
+      max-width: 600px;
+      margin: 5rem auto;
+      padding: 2rem;
+      background: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #000;
+    }
+
+    .booking h2 {
+      text-align: center;
+      color: crimson;
+      margin-bottom: 2rem;
+    }
+
+    .booking input,
+    .booking textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 6px;
+      background: #222;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .booking textarea {
+      height: 100px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: crimson;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      text-align: center;
+      margin: 0.5rem 0;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-block {
+      width: 100%;
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+    <section class="calendar">
+        <h2>DJ Msholozi's Availability</h2>
+        <div class="calendar-header">
+          <button id="prevMonth">&lt;</button>
+          <span id="calendar-month"></span>
+          <button id="nextMonth">&gt;</button>
+        </div>
+        <div id="availability-calendar"></div>
+      </section>
+          
+
+  <section class="booking" id="bookingFormSection">
+    <h2>Book DJ Msholozi</h2>
+    <form id="bookingForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <input type="tel" id="phone" placeholder="Your Phone Number" required>
+      <input type="text" id="event" placeholder="Event Type (e.g. Birthday, Club)" required>
+      <input type="date" id="date" required>
+      <textarea id="message" placeholder="Message or Additional Info" required></textarea>
+
+      <a id="whatsappLink" class="btn btn-block" target="_blank">Send via WhatsApp</a>
+      <a id="emailLink" class="btn btn-block">Send via Email</a>
+    </form>
+  </section>
+
+  <script>
+    // Booked dates (format: YYYY-MM-DD)
+    const bookedDates = [
+      "2025-08-30",
+    ];
+  
+    const calendar = document.getElementById("availability-calendar");
+    const monthDisplay = document.getElementById("calendar-month");
+    const prevBtn = document.getElementById("prevMonth");
+    const nextBtn = document.getElementById("nextMonth");
+  
+    let currentMonth = new Date().getMonth();
+    let currentYear = new Date().getFullYear();
+  
+    const monthNames = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+  
+    function generateCalendar(month, year) {
+      calendar.innerHTML = "";
+      const firstDay = new Date(year, month, 1).getDay(); // day of week
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+  
+      monthDisplay.textContent = `${monthNames[month]} ${year}`;
+  
+      // Add blank days for offset
+      for (let i = 0; i < firstDay; i++) {
+        const blank = document.createElement("div");
+        calendar.appendChild(blank);
+      }
+  
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        const div = document.createElement("div");
+        div.classList.add("calendar-day");
+  
+        if (bookedDates.includes(dateStr)) {
+  div.classList.add("booked");
+  div.textContent = `${day}`;
+  div.title = "Booked";
+} else {
+  div.classList.add("available");
+  div.textContent = `${day}`;
+  div.title = "Available";
+
+  // Make it clickable
+  div.addEventListener("click", () => {
+    // Set the date in the form
+    const dateInput = document.getElementById("date");
+    dateInput.value = dateStr;
+
+    // Scroll to booking form smoothly
+    document.getElementById("bookingFormSection").scrollIntoView({
+      behavior: "smooth"
+    });
+
+    // Focus the name input (optional)
+    setTimeout(() => {
+      document.getElementById("name").focus();
+    }, 600);
+  });
+}
+
+  
+        calendar.appendChild(div);
+      }
+    }
+  
+    // Button navigation
+    prevBtn.addEventListener("click", () => {
+      currentMonth--;
+      if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+      }
+      generateCalendar(currentMonth, currentYear);
+    });
+  
+    nextBtn.addEventListener("click", () => {
+      currentMonth++;
+      if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+      }
+      generateCalendar(currentMonth, currentYear);
+    });
+  
+    // Initial load
+    generateCalendar(currentMonth, currentYear);
+  </script>
+  
+
+</body>
+</html>
