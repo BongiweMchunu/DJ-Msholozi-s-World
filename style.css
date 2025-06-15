@@ -11,14 +11,16 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem; /* adds space between logo and nav */
 }
 
 .logo {
-  max-height: 60px; /* control size without squashing */
-  height: auto;
+  max-height: 80px; /* slightly larger than before */
   width: auto;
+  margin-right: auto; /* pushes nav to the far right */
   display: block;
 }
+
 
 nav ul {
   list-style: none;
