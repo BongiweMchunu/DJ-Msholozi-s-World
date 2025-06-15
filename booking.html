@@ -117,6 +117,17 @@
       "January", "February", "March", "April", "May", "June",
       "July", "August", "September", "October", "November", "December"
     ];
+
+    document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("calendar-day")) {
+    if (e.target.classList.contains("booked")) {
+      alert("Sorry, this date is already booked. Please choose another.");
+    } else if (e.target.classList.contains("available")) {
+      // Redirect or scroll to booking form
+      document.getElementById("booking-form").scrollIntoView({ behavior: "smooth" });
+    }
+  }
+});
   
     function generateCalendar(month, year) {
       calendar.innerHTML = "";

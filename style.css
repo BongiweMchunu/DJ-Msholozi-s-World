@@ -267,6 +267,32 @@ scroll-behavior: smooth;
   line-height: 1.5;
 }
 
+.calendar-day.booked {
+  position: relative;
+}
+
+.calendar-day.booked::after {
+  content: "Booked";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: crimson;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.calendar-day.booked:hover::after {
+  opacity: 1;
+}
+
+
 .booked-highlight {
   color: crimson;
   font-weight: bold;
