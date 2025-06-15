@@ -96,7 +96,9 @@
 
       <a id="whatsappLink" class="btn btn-block" target="_blank">Send via WhatsApp</a>
       <a id="emailLink" class="btn btn-block">Send via Email</a>
-    </form>
+      <a id="smsLink" class="btn btn-block" target="_blank">Send via SMS</a>
+      <button type="button" id="copyBtn" class="btn btn-block">Copy Booking Info</button>
+    </form>      
   </section>
 
   <script>
@@ -189,6 +191,76 @@
   
     // Initial load
     generateCalendar(currentMonth, currentYear);
+  </script>
+  
+  <script>
+    const whatsappLink = document.getElementById("whatsappLink");
+    const smsLink = document.getElementById("smsLink");
+    const emailLink = document.getElementById("emailLink");
+  
+    function getFormDetails() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const event = document.getElementById("event").value;
+      const date = document.getElementById("date").value;
+      const message = document.getElementById("message").value;
+  
+      return {
+        name, email, phone, event, date, message
+      };
+    }
+  
+    function updateLinks() {
+      const { name, email, phone, event, date, message } = getFormDetails();
+      const fullMessage = `Booking Request:
+  Name: ${name}
+  Email: ${email}
+  Phone: ${phone}
+  Event: ${event}
+  Date: ${date}
+  Message: ${message}`;
+  
+      // WhatsApp
+      const encodedWhatsApp = encodeURIComponent(fullMessage);
+      whatsappLink.href = `https://wa.me/27794245714?text=${encodedWhatsApp}`;
+
+  
+      // SMS (works on phones)
+      const encodedSMS = encodeURIComponent(fullMessage);
+      smsLink.href = `sms:0655654917?body=${encodedSMS}`;
+  
+      // Email
+      const subject = encodeURIComponent("DJ Booking Request");
+      const encodedBody = encodeURIComponent(fullMessage);
+      emailLink.href = `mailto:denovianlottering21@gmail.com?subject=${subject}&body=${encodedBody}`;
+    }
+  
+    // Update links when inputs change
+    document.getElementById("bookingForm").addEventListener("input", updateLinks);
+  </script>
+
+<script>
+    const copyBtn = document.getElementById("copyBtn");
+  
+    copyBtn.addEventListener("click", () => {
+      const { name, email, phone, event, date, message } = getFormDetails();
+  
+      const fullMessage = `Booking Request:
+  Name: ${name}
+  Email: ${email}
+  Phone: ${phone}
+  Event: ${event}
+  Date: ${date}
+  Message: ${message}`;
+  
+      navigator.clipboard.writeText(fullMessage).then(() => {
+        alert("Booking info copied to clipboard!");
+      }).catch(err => {
+        alert("Failed to copy booking info. Please copy manually.");
+        console.error(err);
+      });
+    });
   </script>
   
 
