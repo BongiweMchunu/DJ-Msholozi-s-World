@@ -15,7 +15,7 @@ header {
 }
 
 .logo {
-  max-height: 80px; /* slightly larger than before */
+  max-height: 150px; /* slightly larger than before */
   width: auto;
   margin-right: auto; /* pushes nav to the far right */
   display: block;
