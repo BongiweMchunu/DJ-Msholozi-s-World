@@ -51,7 +51,7 @@ nav a {
   transform: perspective(1000px) rotateX(0deg);
 }
 
-.hero a: {
+.hero a {
   color: crimson;
 }
 
