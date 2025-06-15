@@ -51,6 +51,10 @@ nav a {
   transform: perspective(1000px) rotateX(0deg);
 }
 
+.hero a: {
+  color: crimson;
+}
+
 .btn {
   display: inline-block;
   padding: 10px 20px;
