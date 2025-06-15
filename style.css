@@ -173,7 +173,7 @@ scroll-behavior: smooth;
   height: 100px;
 }
 
-.btn-block {
+#copyBtn {
   display: block;
   width: 100%;
   padding: 12px;
