@@ -188,9 +188,8 @@ scroll-behavior: smooth;
   text-decoration: none;
 }
 
-.form-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 1rem;
+.btn-block a{
+  width: 80%;
+  padding: 10px;
+  margin-right: 0;
 }
